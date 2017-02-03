@@ -30,7 +30,7 @@ public class EmoticonsView extends View {
   private Bitmap mLike48, mLike32, mLike24, mLove48, mLove32, mLove24, mHaha48, mHaha32, mHaha24,
       mWow48, mWow32, mWow24, mSad48, mSad32, mSad24, mAngry48, mAngry32, mAngry24;
   private ArrayList<LiveEmoticon> mLiveEmoticons = new ArrayList<>();
-  private final int X_CORDINATE_STEP = 10, Y_CORDINATE_OFFSET = 100, Y_CORDINATE_RANGE = 200;
+  private final int X_CORDINATE_STEP = 8, Y_CORDINATE_OFFSET = 100, Y_CORDINATE_RANGE = 200;
   private int mScreenWidth;
 
   public EmoticonsView(Context activity) {

@@ -28,7 +28,7 @@ import io.reactivex.schedulers.Timed;
 public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
   private Subscription emoticonSubscription;
   private Subscriber subscriber;
-  private final int MINIMUM_DURATION_BETWEEN_EMOTICONS = 400; // in milliseconds
+  private final int MINIMUM_DURATION_BETWEEN_EMOTICONS = 300; // in milliseconds
   @BindView(R.id.like_emoticon)
   ImageView likeEmoticonButton;
   @BindView(R.id.love_emoticon)
@@ -41,9 +41,10 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
   ImageView sadEmoticonButton;
   @BindView(R.id.angry_emoticon)
   ImageView angryEmoticonButton;
-  private Animation bounceAnimation;
   @BindView(R.id.custom_view)
   EmoticonsView emoticonsView;
+
+  private Animation emoticonClickAnimation;
 
 
   @Override
@@ -53,13 +54,16 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
     setContentView(R.layout.activity_fb_live_video_reaction_demo);
     ButterKnife.bind(this);
     emoticonsView.initView(this);
-    bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.sequential);
+  }
 
+  @Override
+  public void onStart() {
+    super.onStart();
     //Create an instance of FlowableOnSubscribe which will convert click events to streams
     FlowableOnSubscribe flowableOnSubscribe = new FlowableOnSubscribe() {
       @Override
-      public void subscribe(final FlowableEmitter e) throws Exception {
-        convertClickEventToStream(e);
+      public void subscribe(final FlowableEmitter emitter) throws Exception {
+        convertClickEventToStream(emitter);
       }
     };
     //Give the backpressure strategey as BUFFER, so that the click items do not drop.
@@ -146,52 +150,54 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
     }
   }
 
-  private void convertClickEventToStream(final FlowableEmitter e) {
+  private void convertClickEventToStream(final FlowableEmitter emitter) {
     likeEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        likeEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.LIKE);
+        doOnClick(likeEmoticonButton, emitter, Emoticons.LIKE);
       }
     });
 
     loveEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        loveEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.LOVE);
+        doOnClick(loveEmoticonButton, emitter, Emoticons.LOVE);
       }
     });
+
     hahaEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        hahaEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.HAHA);
+        doOnClick(hahaEmoticonButton, emitter, Emoticons.HAHA);
       }
     });
 
     wowEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        wowEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.WOW);
+        doOnClick(wowEmoticonButton, emitter, Emoticons.WOW);
       }
     });
 
     sadEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        sadEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.SAD);
+        doOnClick(sadEmoticonButton, emitter, Emoticons.SAD);
       }
     });
 
     angryEmoticonButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        angryEmoticonButton.startAnimation(bounceAnimation);
-        e.onNext(Emoticons.ANGRY);
+        doOnClick(angryEmoticonButton, emitter, Emoticons.ANGRY);
       }
     });
+  }
+
+  private void doOnClick(View view, FlowableEmitter emitter, Emoticons emoticons) {
+    emoticonClickAnimation = AnimationUtils.loadAnimation(FbLiveVideoReactionDemoActivity
+        .this, R.anim.emoticon_click_animation);
+    view.startAnimation(emoticonClickAnimation);
+    emitter.onNext(emoticons);
   }
 }
