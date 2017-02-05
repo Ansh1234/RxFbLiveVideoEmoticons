@@ -6,6 +6,6 @@ This project is inspired by the Live Video Reactions on Facebook. I have used Rx
 ## Demo
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![](fb_live_video_reactions.gif)
 
-I wrote a blog about this about the process and techniques i followed to make these animations. [Here](https://medium.com/@anshuljain/rxjava2-demo-1-facebook-live-video-emoticons-streams-10f5211bc62#.mwgmwi7pa) is the post.
+I wrote a blog about how I used RxJava2 for achieving this. [Here](https://medium.com/@anshuljain/rxjava2-demo-1-facebook-live-video-emoticons-streams-10f5211bc62#.mwgmwi7pa) is the post.
 
 
