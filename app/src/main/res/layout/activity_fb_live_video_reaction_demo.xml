@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/emoticon_background" />
+            />
+            <!--android:src="@drawable/emoticon_background" -->
 
         <com.rxjava.demos.EmoticonsView
             android:id="@+id/custom_view"
