@@ -1,0 +1,9 @@
+.gradle
+/local.properties
+.DS_Store
+build
+bin
+gen
+*.iml
+.idea
+.gitignore

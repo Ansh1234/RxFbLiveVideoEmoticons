@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/work_tools/Android/android-sdk-idea/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.1_b33cd53b0d004d8b8e4decb2d0655c1d5e5e17f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/reactive-streams-1.0.0_abc2b41aa0b3bb0e0c1773bcce0abdf91a6309d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/reactive-streams-1.0.0_abc2b41aa0b3bb0e0c1773bcce0abdf91a6309d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.1_655d7f891f99879e0f874e03cd6c233fd71fc29e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.1_5ee7ec2975d5df0d65521e31d67a7742e436362c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.1_8ee727d21acb151d7660bb4ea6872f9960a0b2e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.1_ab4b09fbe1a037625a2fce4032a4c730fde834c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.1/57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb/rxjava-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/rxjava-2.0.1_462d20bbe089fff503dbbcf926da12b691db2790.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.5.1_96b78a5d73cdfab440b5d41d9c918d316afe613c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.1/57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb/rxjava-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/rxjava-2.0.1_462d20bbe089fff503dbbcf926da12b691db2790.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.1_d811e58c1a5d3197dda435a0bd85e81486eb65b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/io.reactivex.rxjava2/rxandroid/2.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/io.reactivex.rxjava2-rxandroid-2.0.1_8645856525429517f6cd290e59c99273f3a0a72c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.1.1_b00bbb678b7b97ef7d6d792caf5362e5a94589dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/io.reactivex.rxjava2/rxandroid/2.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/io.reactivex.rxjava2-rxandroid-2.0.1_8645856525429517f6cd290e59c99273f3a0a72c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.5.1_96b78a5d73cdfab440b5d41d9c918d316afe613c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.1_64a93332abdda75329e7d3f23231c7d578903e5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.1_c08c400fcf885d12e5dfa6b8951dc488f26f9253.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.5.1/bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc/butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.5.1_699149ed2b308e3f944a9e1569e8aa85d790df5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.1_ba1f1529a05615612aee1923bf72ab1e33ed3a36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.1_43cbe03104b72a9327895c99e2b2b72ff065ee12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/insomnia/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.5.1/bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc/butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="/Users/insomnia/github_src/RxFbLiveVideoEmoticons/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.5.1_699149ed2b308e3f944a9e1569e8aa85d790df5e.jar" />
+    </item>
+
+</items>
