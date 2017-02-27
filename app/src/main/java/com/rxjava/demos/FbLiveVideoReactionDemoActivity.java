@@ -29,6 +29,8 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
   private Subscription emoticonSubscription;
   private Subscriber subscriber;
   private final int MINIMUM_DURATION_BETWEEN_EMOTICONS = 300; // in milliseconds
+
+  // Emoticons views.
   @BindView(R.id.like_emoticon)
   ImageView likeEmoticonButton;
   @BindView(R.id.love_emoticon)
@@ -41,6 +43,7 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
   ImageView sadEmoticonButton;
   @BindView(R.id.angry_emoticon)
   ImageView angryEmoticonButton;
+
   @BindView(R.id.custom_view)
   EmoticonsView emoticonsView;
 
@@ -53,7 +56,7 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
     //Set the view and do all the necessary init.
     setContentView(R.layout.activity_fb_live_video_reaction_demo);
     ButterKnife.bind(this);
-    emoticonsView.initView(this);
+//    emoticonsView.initView(this);
   }
 
   @Override
@@ -66,7 +69,7 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
         convertClickEventToStream(emitter);
       }
     };
-    //Give the backpressure strategey as BUFFER, so that the click items do not drop.
+    //Give the backpressure strategy as BUFFER, so that the click items do not drop.
     Flowable emoticonsFlowable = Flowable.create(flowableOnSubscribe, BackpressureStrategy.BUFFER);
     //Convert the stream to a timed stream, as we require the timestamp of each event
     Flowable<Timed> emoticonsTimedFlowable = emoticonsFlowable.timestamp();
@@ -76,21 +79,22 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
   }
 
   private Subscriber getSubscriber() {
-    return new Subscriber() {
+    return new Subscriber<Timed<Emoticons>>() {
       @Override
       public void onSubscribe(Subscription s) {
         emoticonSubscription = s;
         emoticonSubscription.request(1);
+
+        // for lazy evaluation.
+        emoticonsView.initView(FbLiveVideoReactionDemoActivity.this);
       }
 
       @Override
-      public void onNext(final Object o) {
-        if (o == null || !(o instanceof Timed)) {
-          return;
-        }
+      public void onNext(final Timed<Emoticons> timed) {
 
-        Emoticons emoticons = (Emoticons) ((Timed) o).value();
-        switch (emoticons) {
+        emoticonsView.addView(timed.value());
+
+        /*switch (emoticons) {
           case LIKE:
             emoticonsView.addView(Emoticons.LIKE);
             break;
@@ -109,22 +113,21 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
           case ANGRY:
             emoticonsView.addView(Emoticons.ANGRY);
             break;
-        }
+        }*/
 
-        if (o instanceof Timed) {
-          long currentTimeStamp = System.currentTimeMillis();
-          long diffInMillis = currentTimeStamp - ((Timed) o).time();
-          if (diffInMillis > MINIMUM_DURATION_BETWEEN_EMOTICONS) {
-            emoticonSubscription.request(1);
-          } else {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-              @Override
-              public void run() {
-                emoticonSubscription.request(1);
-              }
-            }, MINIMUM_DURATION_BETWEEN_EMOTICONS - diffInMillis);
-          }
+
+        long currentTimeStamp = System.currentTimeMillis();
+        long diffInMillis = currentTimeStamp - ((Timed) timed).time();
+        if (diffInMillis > MINIMUM_DURATION_BETWEEN_EMOTICONS) {
+          emoticonSubscription.request(1);
+        } else {
+          Handler handler = new Handler();
+          handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+              emoticonSubscription.request(1);
+            }
+          }, MINIMUM_DURATION_BETWEEN_EMOTICONS - diffInMillis);
         }
       }
 
@@ -149,6 +152,7 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
       emoticonSubscription.cancel();
     }
   }
+
 
   private void convertClickEventToStream(final FlowableEmitter emitter) {
     likeEmoticonButton.setOnClickListener(new View.OnClickListener() {
