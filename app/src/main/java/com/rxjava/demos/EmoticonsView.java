@@ -27,8 +27,8 @@ public class EmoticonsView extends View {
   private Paint mPaint;
   private Path mAnimPath;
   private Matrix mMatrix;
-  private Bitmap mLike48, mLike32, mLike24, mLove48, mLove32, mLove24, mHaha48, mHaha32, mHaha24,
-      mWow48, mWow32, mWow24, mSad48, mSad32, mSad24, mAngry48, mAngry32, mAngry24;
+  private Bitmap mLike48, mLove48, mHaha48, mWow48, mSad48, mAngry48;
+
   private ArrayList<LiveEmoticon> mLiveEmoticons = new ArrayList<>();
   private final int X_CORDINATE_STEP = 8, Y_CORDINATE_OFFSET = 100, Y_CORDINATE_RANGE = 200;
   private int mScreenWidth;
@@ -58,28 +58,16 @@ public class EmoticonsView extends View {
     Resources res = getResources();
     //Like emoticons
     mLike48 = BitmapFactory.decodeResource(res, R.drawable.like_48);
-    mLike32 = BitmapFactory.decodeResource(res, R.drawable.like_32);
-    mLike24 = BitmapFactory.decodeResource(res, R.drawable.like_24);
     //Love emoticons
     mLove48 = BitmapFactory.decodeResource(res, R.drawable.love_48);
-    mLove32 = BitmapFactory.decodeResource(res, R.drawable.love_32);
-    mLove24 = BitmapFactory.decodeResource(res, R.drawable.love_24);
-    //Haha emoticonss
+    //Haha emoticons
     mHaha48 = BitmapFactory.decodeResource(res, R.drawable.haha_48);
-    mHaha32 = BitmapFactory.decodeResource(res, R.drawable.haha_32);
-    mHaha24 = BitmapFactory.decodeResource(res, R.drawable.haha_24);
     //Wow emoticons
     mWow48 = BitmapFactory.decodeResource(res, R.drawable.wow_48);
-    mWow32 = BitmapFactory.decodeResource(res, R.drawable.wow_32);
-    mWow24 = BitmapFactory.decodeResource(res, R.drawable.wow_24);
     //Sad emoticons
     mSad48 = BitmapFactory.decodeResource(res, R.drawable.sad_48);
-    mSad32 = BitmapFactory.decodeResource(res, R.drawable.sad_32);
-    mSad24 = BitmapFactory.decodeResource(res, R.drawable.sad_24);
     //Angry emoticons
     mAngry48 = BitmapFactory.decodeResource(res, R.drawable.angry_48);
-    mAngry32 = BitmapFactory.decodeResource(res, R.drawable.angry_32);
-    mAngry24 = BitmapFactory.decodeResource(res, R.drawable.angry_24);
   }
 
   protected void onDraw(Canvas canvas) {
@@ -88,20 +76,18 @@ public class EmoticonsView extends View {
   }
 
   private void drawAllLiveEmoticons(Canvas canvas) {
-    ListIterator iterator = mLiveEmoticons.listIterator();
+    ListIterator<LiveEmoticon> iterator = mLiveEmoticons.listIterator();
     while (iterator.hasNext()) {
       Object object = iterator.next();
-      if (!(object instanceof LiveEmoticon)) {
-        continue;
-      }
+
       LiveEmoticon liveEmoticon = (LiveEmoticon) object;
-      Integer xCordinate = liveEmoticon.getxCordinate() - X_CORDINATE_STEP;
-      Integer yCordinate = liveEmoticon.getyCordinate();
-      liveEmoticon.setxCordinate(xCordinate);
-      if (xCordinate > 0) {
+      Integer xCoordinate = liveEmoticon.getxCordinate() - X_CORDINATE_STEP;
+      Integer yCoordinate = liveEmoticon.getyCordinate();
+      liveEmoticon.setxCordinate(xCoordinate);
+      if (xCoordinate > 0) {
         mMatrix.reset();
-        mMatrix.postTranslate(xCordinate, yCordinate);
-        resizeImageSizeBasedOnXCordinates(canvas, liveEmoticon);
+        mMatrix.postTranslate(xCoordinate, yCoordinate);
+        resizeImageSizeBasedOnXCoordinates(canvas, liveEmoticon);
         invalidate();
       } else {
         iterator.remove();
@@ -109,14 +95,14 @@ public class EmoticonsView extends View {
     }
   }
 
-  private void resizeImageSizeBasedOnXCordinates(Canvas canvas, LiveEmoticon liveEmoticon) {
+  private void resizeImageSizeBasedOnXCoordinates(Canvas canvas, LiveEmoticon liveEmoticon) {
     if (liveEmoticon == null) {
       return;
     }
-    int xCordinate = liveEmoticon.getxCordinate();
+
+    int xCoordinate = liveEmoticon.getxCordinate();
     Bitmap bitMap48 = null;
-    Bitmap bitMap32 = null;
-    Bitmap bitMap24 = null;
+    Bitmap scaled = null;
 
     Emoticons emoticons = liveEmoticon.getEmoticons();
     if (emoticons == null) {
@@ -126,49 +112,39 @@ public class EmoticonsView extends View {
     switch (emoticons) {
       case LIKE:
         bitMap48 = mLike48;
-        bitMap32 = mLike32;
-        bitMap24 = mLike24;
         break;
       case LOVE:
         bitMap48 = mLove48;
-        bitMap32 = mLove32;
-        bitMap24 = mLove24;
         break;
       case HAHA:
         bitMap48 = mHaha48;
-        bitMap32 = mHaha32;
-        bitMap24 = mHaha24;
         break;
       case WOW:
         bitMap48 = mWow48;
-        bitMap32 = mWow32;
-        bitMap24 = mWow24;
         break;
       case SAD:
         bitMap48 = mSad48;
-        bitMap32 = mSad32;
-        bitMap24 = mSad24;
         break;
       case ANGRY:
         bitMap48 = mAngry48;
-        bitMap32 = mAngry32;
-        bitMap24 = mAngry24;
         break;
     }
 
-    if (xCordinate > mScreenWidth / 2) {
+    if (xCoordinate > mScreenWidth / 2) {
       canvas.drawBitmap(bitMap48, mMatrix, null);
-    } else if (xCordinate > mScreenWidth / 4) {
-      canvas.drawBitmap(bitMap32, mMatrix, null);
+    } else if (xCoordinate > mScreenWidth / 4) {
+      scaled = Bitmap.createScaledBitmap(bitMap48, 3 * bitMap48.getWidth() / 4, 3 * bitMap48.getHeight() / 4, false);
+      canvas.drawBitmap(scaled, mMatrix, null);
     } else {
-      canvas.drawBitmap(bitMap24, mMatrix, null);
+      scaled = Bitmap.createScaledBitmap(bitMap48, bitMap48.getWidth() / 2, bitMap48.getHeight() / 2, false);
+      canvas.drawBitmap(scaled, mMatrix, null);
     }
   }
 
   public void addView(Emoticons emoticons) {
-    int startXCordinate = mScreenWidth;
-    int startYCordinate = new Random().nextInt(Y_CORDINATE_RANGE) + Y_CORDINATE_OFFSET;
-    LiveEmoticon liveEmoticon = new LiveEmoticon(emoticons, startXCordinate, startYCordinate);
+    int startXCoordinate = mScreenWidth;
+    int startYCoordinate = new Random().nextInt(Y_CORDINATE_RANGE) + Y_CORDINATE_OFFSET;
+    LiveEmoticon liveEmoticon = new LiveEmoticon(emoticons, startXCoordinate, startYCoordinate);
     mLiveEmoticons.add(liveEmoticon);
     invalidate();
   }
