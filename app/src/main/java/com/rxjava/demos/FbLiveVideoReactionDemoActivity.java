@@ -56,7 +56,6 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
     //Set the view and do all the necessary init.
     setContentView(R.layout.activity_fb_live_video_reaction_demo);
     ButterKnife.bind(this);
-//    emoticonsView.initView(this);
   }
 
   @Override
@@ -93,28 +92,6 @@ public class FbLiveVideoReactionDemoActivity extends AppCompatActivity {
       public void onNext(final Timed<Emoticons> timed) {
 
         emoticonsView.addView(timed.value());
-
-        /*switch (emoticons) {
-          case LIKE:
-            emoticonsView.addView(Emoticons.LIKE);
-            break;
-          case LOVE:
-            emoticonsView.addView(Emoticons.LOVE);
-            break;
-          case HAHA:
-            emoticonsView.addView(Emoticons.HAHA);
-            break;
-          case WOW:
-            emoticonsView.addView(Emoticons.WOW);
-            break;
-          case SAD:
-            emoticonsView.addView(Emoticons.SAD);
-            break;
-          case ANGRY:
-            emoticonsView.addView(Emoticons.ANGRY);
-            break;
-        }*/
-
 
         long currentTimeStamp = System.currentTimeMillis();
         long diffInMillis = currentTimeStamp - ((Timed) timed).time();
