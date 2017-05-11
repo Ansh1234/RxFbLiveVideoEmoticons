@@ -9,8 +9,10 @@ This project is inspired by the Live Video Reactions on Facebook. I have used Rx
 I wrote a blog about how I used RxJava2 for achieving this. [Here](https://medium.com/@anshuljain/rxjava2-demo-1-facebook-live-video-emoticons-streams-10f5211bc62#.mwgmwi7pa) is the post.
 
 ------
+**Checkout my other projects**
 
-Checkout my library [AppDataReader](https://github.com/Ansh1234/AppDataReader) - A library for reading Shared Preferences and Database values within the application.
+[AppDataReader](https://github.com/Ansh1234/AppDataReader) - A library for reading Shared Preferences and Database values within the application.
 
+[RxDownloader](https://github.com/Ansh1234/RxDownloader)- Demo of Downloading Songs/Images through Android Download Manager using RxJava2
 
-
+[WebViewDemo](https://github.com/Ansh1234/WebViewDemo) - A demo project for showing how to use WebViews in Android.
